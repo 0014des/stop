@@ -42,14 +42,14 @@ startBtn.addEventListener('click', () => {
 // ストップボタンの処理
 stopBtn.addEventListener('click', () => {
     if (!isRunning) return; // 既に止まっていたら何もしない
-0
+04
     // タイマーを停止
     clearInterval(timerInterval);
     isRunning = false;
 
     // 最終的な経過時間を計算して表示
     const elapsedTime = (Date.now() - startTime) / 10000;
-    timerDisplay.textContent = elapsedTime.toFixed(3);
+    timerDisplay.textContent = elapsedTime.toFixed(4);
 
     // 目標秒数を再度取得
     const targetSeconds = parseFloat(targetSecondsInput.value);
@@ -68,14 +68,14 @@ stopBtn.addEventListener('click', () => {
     } else if (diff <= 0.500) {
         message = '🙂 もうちょっと！ 🙂';
     } else {
-        message = '😅 残念！再挑戦しよう！ 😅';
-    }
+        message = '😅 残念！再挑戦しよう！ 😅';４
+    }4
 
     // 結果を表示
     resultDisplay.innerHTML = `
-        目標: ${targetSeconds.toFixed(3)}秒<br>
-        結果: ${elapsedTime.toFixed(3)}秒<br>
-        誤差: ${diff.toFixed(3)}秒<br>
+        目標: ${targetSeconds.toFixed(4)}秒<br>
+        結果: ${elapsedTime.toFixed(4)}秒<br>
+        誤差: ${diff.toFixed(4)}秒<br>
         <strong>${message}</strong>
     `;
 
