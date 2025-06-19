@@ -26,15 +26,15 @@ startBtn.addEventListener('click', () => {
     startTime = Date.now();
     
     // UIをゲーム中の状態に更新
-    timerDisplay.textContent = '0.000';
-    resultDisplay.innerHTML = ''; // 前回の結果をリセット
+    timerDisplay.textContent = '0.0000';
+    resultDisplay.innerHTML = ''; // 前回の結果をリセット0
     startBtn.disabled = true;
     stopBtn.disabled = false;
     targetSecondsInput.disabled = true; // ゲーム中は目標を変更できないようにする
 
     // タイマーを開始 (10ミリ秒ごとに表示を更新)
     timerInterval = setInterval(() => {
-        const elapsedTime = (Date.now() - startTime) / 1000;
+        const elapsedTime = (Date.now() - startTime) / 10000;
         timerDisplay.textContent = elapsedTime.toFixed(3);
     }, 10);
 });
@@ -42,13 +42,13 @@ startBtn.addEventListener('click', () => {
 // ストップボタンの処理
 stopBtn.addEventListener('click', () => {
     if (!isRunning) return; // 既に止まっていたら何もしない
-
+0
     // タイマーを停止
     clearInterval(timerInterval);
     isRunning = false;
 
     // 最終的な経過時間を計算して表示
-    const elapsedTime = (Date.now() - startTime) / 1000;
+    const elapsedTime = (Date.now() - startTime) / 10000;
     timerDisplay.textContent = elapsedTime.toFixed(3);
 
     // 目標秒数を再度取得
