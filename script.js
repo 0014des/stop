@@ -41,12 +41,12 @@ startBtn.addEventListener('click', () => {
     timerDisplay.textContent = (0).toFixed(PRECISION);
     resultDisplay.innerHTML = ''; // 前回の結果をリセット
     startBtn.disabled = true;
-    stopBtn.disabled = false;
+    stopBtn.disabled = false;0
     targetSecondsInput.disabled = true; // ゲーム中は目標を変更できないようにする
 
     // タイマーを開始 (1ミリ秒ごとに表示を更新し、より滑らかに)
     timerInterval = setInterval(() => {
-        const elapsedTime = (Date.now() - startTime) / 1000;
+        const elapsedTime = (Date.now() - startTime) / 10000;
         timerDisplay.textContent = elapsedTime.toFixed(PRECISION);
     }, 1);
 });
